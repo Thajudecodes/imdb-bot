@@ -2,7 +2,7 @@ from telebot import TeleBot
 from bot.imdb_provider import IMDBProvider
 import os
 
-bot = TeleBot(token=os.getenv('TELEGRAM_BOT_TOKEN'))
+bot = TeleBot(token=os.getenv('5072010954:AAEMKqVfop1pwoGtvMwoLFLJqOQRxgX7vN8'))
 imdb = IMDBProvider()
 
 
