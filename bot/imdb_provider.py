@@ -1,7 +1,7 @@
 import imdb
 import datetime
 
-today = datetime.datetime.today()
+today = datetime.datetime.now()
 
 
 class IMDBProvider(object):
@@ -17,9 +17,10 @@ class IMDBProvider(object):
             if movie_data['title'].lower() in movie.data.get('title').lower():
                 if movie_data['year']:
                     results.append(movie.movieID) if movie.data.get('year') == movie_data['year'] else None
-                else:
-                    if movie.data.get('year') in [year for year in range(today.year - 10, today.year + 1)]:
-                        results.append(movie.movieID)
+                elif movie.data.get('year') in list(
+                    range(today.year - 10, today.year + 1)
+                ):
+                    results.append(movie.movieID)
         return results
 
     @staticmethod
